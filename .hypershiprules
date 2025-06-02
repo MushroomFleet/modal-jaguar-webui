@@ -1,0 +1,34 @@
+# Project Context for Hypership Template
+
+## Framework
+
+- Next.js with App Router
+
+## Important Notes
+
+- Providers.tsx is a protected file that must remain unchanged
+- Providers.tsx is used by Hypership to provide auth, analytics, and events to the app
+- Create modular React components instead of monolithic page files
+- Break down complex UI into reusable components
+- Use React Server Components when using hypership/db
+- If the user asks to add authentication, user auth, auth, or anything related to authentication, implement Hypership Authentication and reference the documentation in @hypership.md. The auth provider already exists in the project, so go straight to adding auth components.
+- If the user asks to track events, implement event tracking using Hypership Events package and reference the documentation in @hypership.md.
+- If the user asks to store data or to use a database, use the built in Hypership DB that is already installed in this project. Reference the documentation in @hypership.md
+- When storing data for signed in users, we automatically store the userId against any data created so you don't need to manually store the userId in the data payload.
+- Place components in appropriate directories based on their scope and usage
+- If you use external images, make sure you add the top level domain of that image to next.config.ts in the domains array.
+- Prefer using Next.js Image component over HTML img tags for better performance and optimization
+- NEVER provide instructions to build, start, or run the application (npm run build, npm run start, npm run dev, etc.) or mention localhost URLs to users
+- NEVER modify the .env file
+
+## Technologies
+
+- TailwindCSS 3.4.1
+- Next.js 15.2.4
+- React 19.0.0
+
+## Process Requirements
+
+- Run `npm run lint` at the end to check for issues
+- Do not run `npm run dev` at any time.
+- NEVER run the app in the local browser or ask the user to do so. Hypership should never use the browser in the IDE.
